@@ -13,3 +13,18 @@ services:
       name: rabbitmq
       mountPath: /var/lib/rabbitmq
       sizeGB: 5
+
+  - type: web
+    name: hdotweb-rabbitmq-staging
+    runtime: docker
+    envVars:
+      - key: RABBITMQ_ERLANG_COOKIE
+        generateValue: true
+      - key: RABBITMQ_DEFAULT_USER
+        value: rabbitmq
+      - key: RABBITMQ_DEFAULT_PASS
+        generateValue: true
+    disk:
+      name: rabbitmq-staging
+      mountPath: /var/lib/rabbitmq
+      sizeGB: 5

@@ -1,6 +1,7 @@
 services:
   - type: web
     name: hdotweb-rabbitmq
+    plan: starter
     runtime: docker
     envVars:
       - key: RABBITMQ_ERLANG_COOKIE
@@ -16,6 +17,7 @@ services:
 
   - type: web
     name: hdotweb-rabbitmq-staging
+    plan: starter
     runtime: docker
     envVars:
       - key: RABBITMQ_ERLANG_COOKIE
